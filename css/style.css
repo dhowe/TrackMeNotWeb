@@ -12,6 +12,9 @@
 .index-header {
   line-height: 28px;
 }
+.index-header-banned {
+  
+}
 .link {
   color: #006ec4;
   text-decoration: none;
@@ -46,6 +49,10 @@ a#firefoxbutton, a#firefoxbutton:visited {
 a#chromebutton, a#chromebutton:visited {
     background-color: #656AD3;
     color:#EF9C65;
+}
+a#bannedbutton, a#bannedbutton:visited {
+  background-color: #FDC200;
+  color:#000;
 }
 .smLink {
   color: #006ec4;

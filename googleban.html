@@ -1,0 +1,298 @@
+<html>
+
+<head>
+  <title>TrackMeNot</title>
+  <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+  <meta name="description" content="TrackMeNot Homepage">
+  <meta name="revisit-after" content="1 days">
+  <meta name="language" content="en">
+  <meta name="author" content="Daniel C. Howe">
+  <meta name="page-topic" content="TrackMeNot">
+  <meta name="page-type" content="homepage">
+  <meta name="audience" content="All">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <meta name="keywords"
+    content="TrackMeNot, obfuscation, extension, privacy, surveillance, search, howe, nissenbaum, toubiana, cims, nyu, values, design">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/tmn_icon.png" />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      function selectLanguage(language) {
+        $("[lang]").each(function () {
+          if ($(this).attr("lang") === language) $(this).show();
+          else $(this).hide();
+        });
+      }
+
+      // pick download button for browser: chrome and firefox, default=both
+      var isChrome = !!window.chrome && !!window.chrome.webstore;
+      var isFirefox = typeof InstallTrigger !== "undefined";
+
+      if (isChrome) document.getElementById("firefoxbutton").style.display = "none";
+      else if (isFirefox)
+        document.getElementById("chromebutton").style.display = "none";
+
+      var lang = "en", userLang = navigator.language || navigator.userLanguage,
+        displayLang = location.search.length > 0 ? location.search : userLang;
+
+      if (displayLang.endsWith('en')) lang = "en";
+      else if (displayLang.endsWith('fr')) lang = "fr";
+      else if (displayLang.indexOf('zh') > -1) lang = "zh";
+
+      selectLanguage(lang);
+    });
+  </script>
+</head>
+
+<body BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+  <center>
+    <table WIDTH=553 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+      <tr>
+        <td COLSPAN=2 ROWSPAN=4 bgcolor=#E6EAE2>
+          <IMG SRC="images/TMN_logo.gif" WIDTH=234 HEIGHT=206 ALT="">
+        </td>
+        <td COLSPAN=2 bgcolor=#E6EAE2>
+          <IMG SRC="images/TMN_header.gif" WIDTH=362 HEIGHT=52 ALT="">
+          <div id="languageSelect">
+            <a class="link" href="index.html?en">EN</a> /
+            <a class="link" href="index.html?fr">FR</a> /
+            <a class="link" href="index.html?zh">ZH</a>
+          </div>
+        </td>
+        <td ROWSPAN=12 bgcolor=#E6EAE2>
+          <!-- right margin -->
+          <IMG SRC="images/spacer.gif" WIDTH=57 ALT="">
+        </td>
+      </tr>
+      <tr>
+        <td COLSPAN=2 bgcolor=#E6EAE2>
+          <table>
+            <tr>
+              <td>
+                <font face=verdana size=2 color=#00446D><b>
+                    <span lang="en">Created by:</span>
+                    <span lang="fr">Created by:</span>
+                    <span lang="zh">創建</span>
+                  </b></font>
+              </td>
+              <td>
+                <font face=verdana size=2 color=#413F3F>&nbsp;Daniel C. Howe, Helen Nissenbaum</font>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <font face=verdana size=2 color=#00446D><b>
+                    <span lang="en">Developed by:</span>
+                    <span lang="fr">Developed by:</span>
+                    <span lang="zh">開發</span>
+                  </b></font>
+              </td>
+              <td>
+                <font face=verdana size=2 color=#413F3F>&nbsp;Vincent Toubiana</font>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#E6EAE2" valign=middle>
+          <a href="banned.html">
+            <img src="images/googlebanned.png" width="200" style="margin-left:50px">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td ROWSPAN=8 background="images/left_frame.gif">
+          <IMG SRC="images/spacer.gif" WIDTH=71 HEIGHT=522 ALT="">
+        </td>
+        <td bgcolor=#D6E0E0 width=234>
+        </td>
+        <td bgcolor=#E6EAE2 width=360>
+        </td>
+      </tr>
+      <tr>
+        <td COLSPAN=3 bgcolor=#E6EAE2>
+          <div class=block>
+            <br />
+            <font face=verdana size=3 color=#00446D>
+              <span class="index-header-banned" lang="en"> <b>Google labels TrackMeNot as malware, bans it from Chrome
+                  store, suspends developer account...</b>
+              </span>
+              <span class="index-header-banned" lang="fr"></span>
+              <span class="index-header-banned" lang="zh"></span>
+              </b>
+            </font>
+            <br /><br />
+          </div>
+          <div class=block>
+            <font face=verdana size=2 color=#413F3F>
+              <span lang="en">
+                On May 12th, we received an e-mail from Google informing us that our TrackMeNot browser extension, which
+                protects users from tracking by search engines, was at risk of being removed from the Chrome Web Store.
+                The alleged reason: it violated several of the Chrome Web Store’s Program Policies, such as providing an
+                inaccurate description of its functionality or requesting permissions that it did not use. The e-mail
+                also warned us that we had two weeks to make the necessary changes to avoid removal of TrackMeNot (TMN)
+                from the store. Yet, in spite of the 14-day grace period, Google blocked TMN from the Chrome Store
+                <em>the
+                  very next day.</em>
+                <br><br>
+                Blocking TMN from the Chrome Store had two immediate consequences. First, Google notified all current
+                users of the software that the extension “contained malware”. Many long-time users (TrackMeNot has been
+                listed in the Chrome Store since 2011, as well as the Mozilla store and other app platforms since 2006)
+                contacted us to ask how and why they had received this notification, while others started a <a
+                  href="https://www.reddit.com/r/brave_browser/comments/uobexc/track_me_not_extension_flagged_as_malware/"
+                  target="_blank" class="link">thread on
+                  Reddit</a> to discuss why the extension had been disabled, and how it could be restored.
+                <br><br>
+
+                Secondly, Google removed TrackMeNot from the Chrome Store, so that new users would not be able to
+                install or even to view it.
+                <div style="max-width:300px">
+                  <figure>
+                    <img src="images/chrome_warning.png" alt="Chrome warning">
+                  </figure>
+                  <figure>
+                    <img src="images/chrome_dahsboard.jpg" alt="Chrome warning in extension dashboard" />
+                  </figure>
+                </div>
+
+                <p>Google did not stop there, however. A week later, on May 19<sup>th</sup>, they also blocked our
+                  developer account, effectively preventing us from updating or fixing the alleged violations they had
+                  cited. With our account blocked, we were not only unable to update TrackMeNot’s code, but we were
+                  unable to reach out to our users who had been misled to believe that TMN contained
+                  malware.&nbsp;&nbsp;
+                </p>
+
+
+                <p>Confused and frustrated by Google's decisions, we reached out to Google the very same day, asking for
+                  an explanation and requesting reactivation of our developer account, if only to enable us to fix the
+                  so-called "issues” that had been identified. Google’s response came the next day (May
+                  20<sup>th</sup>):&nbsp;&nbsp;
+                </p>
+
+
+                <p><em>"Your developer account was suspended from the Chrome Web Store for publishing items that were
+                    engaged in malicious activities harmful to users. Given the nature of this violation your account
+                    will not be reinstated. We can’t disclose details about the malicious activity due to security
+                    reasons”
+                  </em>.&nbsp;&nbsp;
+                </p>
+
+
+                <p>We replied again, asking to know, if not the “details”, at least the general nature of the malicious
+                  activity with which we were being accused.&nbsp;&nbsp;
+                </p>
+
+
+                <p>It was only on June 14th, more than a month after the original suspension of TrackMeNot, and after
+                  ignoring multiple requests for explanations, and for reinstatement of our developer account, that
+                  Google finally replied, acknowledging their mistake:&nbsp;
+                </p>
+
+
+                <p>
+                  <em>“We would like to provide you an update on your taken down item and suspended developer account
+                    for item ‘TrackMeNot’. We have reviewed your item and have noticed that there were some errant
+                    enforcements made to your item. However your published item contained the following errors which led
+                    to the take down of the item in the Chrome Web Store.
+                  </em>&nbsp;
+                </p>
+                <hr>
+
+                <p><strong>
+                    <em>Violation
+                    </em></strong>
+                  <em>: Requesting broad permissions that are not required to implement the extension’s functionality
+                  </em>&nbsp;
+                </p>
+
+
+                <p><strong>
+                    <em>Corrective action
+                    </em></strong>
+                  <em>: Remove the following permission(s) or request narrower permission(s) instead:
+                  </em>&nbsp;
+                </p>
+        
+
+                <p>
+                  <em>Tabs. The most recent version of your extension appears to rectify the above violation, however
+                    the general functionality of the extension is still being evaluated to ensure its compliance with
+                    our security policies.”&nbsp;
+                  </em>&nbsp;
+                </p>
+                <hr>
+                <p>The last response came a week later, on June 21st:&nbsp;
+                </p>
+
+                <p>
+                  <em>“After further review of your item, we have confirmed that your item did not comply with our
+                    Program Policies and will not be allowed back in the store.
+                  </em>&nbsp;
+                </p>
+
+                <p>
+                  <em>However, your developer account will be reinstated.”
+                  </em>&nbsp;
+                </p>
+
+                <p>Given the fact that
+                  <a class="link"
+                    href="https://freedom-to-tinker.com/2017/01/24/adnauseam-google-and-the-myth-of-the-acceptable-ad/"
+                    target="_blank" rel="noreferrer noopener">our AdNauseam extension was banned previously,</a> this
+                  response, while frustrating, was not unexpected. When Google decides that they no longer want software
+                  to be available to users, they will
+                  <em>find a reason
+                  </em> to ban it. &nbsp;
+                </p>
+
+
+                <p>Our experiences with TrackMeNot and AdNauseam, both not-for-profit, free, open-source privacy
+                  extensions, with many thousands of users, raises potentially troubling questions regarding Google’s
+                  self-appointed role as sole arbiter and gatekeeper for the Chrome Store, and the diminishing options
+                  it presents for developers and users alike.&nbsp;
+                </p>
+
+
+                <p>This post is our attempt to be, at very least, transparent about Google’s decision to ban TrackMeNot
+                  (and, previously,&nbsp; AdNauseam) and to arbitrarily suspend our developer account, so that users and
+                  developers have additional information with which to make decisions about engaging with Google
+                  services.&nbsp;&nbsp;
+                </p>
+
+                <br>
+                <hr><br>
+              </span>
+              </span>
+              <span lang="fr">
+              </span>
+              <span lang="zh">
+              </span>
+            </font>
+            <br />
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td COLSPAN=3 bgcolor=#E6EAE2>
+          <font face=verdana size=2>
+            <a href="./index.html" class=link>Back to Main Page</a>
+            <p>&nbsp;</a>
+          </font><br>
+        </td>
+      </tr>
+    </table>
+
+  </center>
+</body>
+
+</html>
